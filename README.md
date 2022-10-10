@@ -1,2 +1,2 @@
 # aapnegara.github.io
-repository for my github pages (personal website)
+This repository is for my github pages (personal website)
