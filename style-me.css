@@ -18,6 +18,10 @@ body {
   margin: 30px 0;
 }
 
+.card-text {
+  text-align: justify;
+}
+
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
