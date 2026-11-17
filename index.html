@@ -1,147 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <meta name="google-site-verification" content="FcCeLQBC98d8uwUBw-DxEHVY-xZgGyp2WPUxnJ5W72s" /> -->
-    <meta name="google-site-verification" content="6RvTwwUUiT_uqdz3PPWrR4E27r4q9DCPrpD5_2fJl_A" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="personal webpage" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="6RvTwwUUiT_uqdz3PPWrR4E27r4q9DCPrpD5_2fJl_A" />
+    <title>Agung Negara</title>
+    <meta name="description" content="Andi Agung Prawira Negara — MSc student in Astronomy &amp; Astrophysics at KU Leuven, working on the circumstellar environments of AGB stars, stellar evolution and machine learning for astronomy." />
     <meta name="author" content="Andi Agung Prawira Negara" />
-    <title>Agung Negara · Homepage</title>
 
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-touch-icon.png" /> -->
-    <!-- <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png" /> -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png" /> -->
-    <!-- <link rel="manifest" href="static/images/favicon/site.webmanifest" /> -->
-    <!-- <meta name="msapplication-TileColor" content="#da532c" /> -->
-    <!-- <meta name="theme-color" content="#ffffff" /> -->
+    <!-- Link previews (WhatsApp, Slack, LinkedIn, ...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Andi Agung Prawira Negara" />
+    <meta property="og:description" content="MSc student in Astronomy &amp; Astrophysics at KU Leuven — AGB stars, stellar evolution, astrochemistry." />
+    <meta property="og:url" content="https://aapnegara.github.io/" />
+    <meta property="og:image" content="https://aapnegara.github.io/images/profile.jpg" />
 
-    <!-- Bootstrap core CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230b1020'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f08a4b'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23f08a4b' stroke-opacity='.35' stroke-width='2'/%3E%3C/svg%3E" />
 
-    <!-- Custom styles -->
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
     <link href="style-me.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Homepage</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnavbar" aria-controls="mainnavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <a class="skip" href="#about">Skip to content</a>
 
-        <div class="collapse navbar-collapse" id="mainnavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <!-- <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a> -->
-            </li>
-            <!-- <li class="nav-item"><a class="nav-link" href="#about" target="_blank">About</a></li> -->
-            <!-- <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li> -->
-            <li class="nav-item"><a class="nav-link" href="https://www.researchgate.net/profile/Andi-Agung-Prawira-Negara/research" target="_blank">Publications</a></li>
-            <!-- <li class="nav-item"><a class="nav-link" href="talks.html">Projects</a></li> -->
-            <!-- <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li> -->
-            <!-- <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/andiagungprawiranegara/" target="_blank">CV</a></li> -->
-            <li class="nav-item"><a class="nav-link" href="mailto:agungprawiranegara3@gmail.com" target="_blank">Message</a></li>
+    <nav class="nav" aria-label="Main">
+      <div class="wrap nav-inner">
+        <a class="brand" href="#top">Agung Negara</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="wrap hero-inner">
+        <img class="portrait" src="images/profile.jpg" width="484" height="622" alt="Portrait of Agung Negara" />
+        <div class="hero-text">
+          <p class="eyebrow">Astronomy &amp; Astrophysics</p>
+          <h1>Andi Agung Prawira Negara</h1>
+          <p class="role">MSc student · Institute of Astronomy, KU Leuven</p>
+          <p class="tagline">Modelling the winds and dusty, molecule-rich envelopes of evolved stars, and connecting those models to what telescopes actually see.</p>
+          <p class="location">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z" /><circle cx="12" cy="10" r="2.5" /></svg>
+            Leuven, Belgium
+          </p>
+          <ul class="links">
+            <li><a class="pill pill-primary" href="mailto:aagungprawira.negara@student.kuleuven.be">Email</a></li>
+            <!-- TODO: put your CV at files/cv.pdf and remove the "placeholder" class -->
+            <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">CV</a></li>
+            <!-- TODO: replace with your ADS library / author query, e.g. https://ui.adsabs.harvard.edu/search/q=author%3A%22Negara%2C%20A.%20A.%20P.%22 -->
+            <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">NASA ADS</a></li>
+            <!-- TODO: replace with https://orcid.org/0000-0000-0000-0000 -->
+            <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">ORCID</a></li>
+            <li><a class="pill" href="https://scholar.google.com/citations?user=L5KyOsYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a class="pill" href="https://www.researchgate.net/profile/Andi-Agung-Prawira-Negara/research" target="_blank" rel="noopener">ResearchGate</a></li>
+            <li><a class="pill" href="https://github.com/aapnegara" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a class="pill" href="https://www.linkedin.com/in/andiagungprawiranegara/" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
       </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="images/Gambar3.png" alt="profile_picture" />
-            <ul class="list-group list-group-flush">
-              <!-- <li class="list-group-item"><i class="fas fa-envelope"></i> <a href="mailto:agungprawiranegara3@gmail.com">agungprawiranegara@gmail.com</a></li> -->
-              <!-- <li class="list-group-item"><i class="fas fa-mobile-alt"></i> (+62) 81320918028</li> -->
-              <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Leuven, Belgium</li>
-            </ul>
+    </header>
+
+    <main class="wrap">
+      <section id="about" class="section">
+        <h2>About</h2>
+        <div class="prose">
+          <p>
+            Hello! I'm Andi Agung Prawira Negara (Agung Negara), a Master's student in Astronomy and Astrophysics at KU Leuven. My research interests lie broadly in computational astrophysics, particularly stellar evolution, and in applying machine learning to astronomical problems. I am also interested in space weather and in data-driven approaches to understanding astrophysical phenomena.
+          </p>
+          <p>
+            Before joining KU Leuven, I completed my bachelor's degree in Physics at Universitas Hasanuddin, where I studied how enhanced mass-loss rates during the red supergiant phase shape the evolution of massive stars, using the one-dimensional stellar evolution code
+            <a href="https://docs.mesastar.org/en/" target="_blank" rel="noopener">MESA</a>.
+          </p>
+          <p>
+            At KU Leuven, my research focuses on the circumstellar environments of asymptotic giant branch (AGB) stars. My thesis combines computational modelling, astrochemistry and radiative transfer to investigate the physical and chemical processes in stellar winds, and to better connect theoretical models with astronomical observations.
+          </p>
+        </div>
+        <ul class="tags" aria-label="Research interests">
+          <li>AGB stars &amp; stellar winds</li>
+          <li>Stellar evolution</li>
+          <li>Astrochemistry</li>
+          <li>Radiative transfer</li>
+          <li>Machine learning for astronomy</li>
+          <li>Space weather</li>
+        </ul>
+      </section>
+
+      <section id="research" class="section">
+        <h2>Research</h2>
+        <div class="projects">
+          <article class="project">
+            <!-- TODO: replace this placeholder with <img src="images/agb-thesis.png" alt="..."> -->
+            <div class="figure-placeholder" role="img" aria-label="Figure placeholder">
+              <span>Figure placeholder</span>
+              <small>e.g. a model of the circumstellar envelope, or synthetic vs. observed line profiles</small>
+            </div>
+            <div class="project-body">
+              <p class="meta">MSc thesis · KU Leuven · <span class="status">Ongoing</span></p>
+              <h3>Circumstellar environments of AGB stars</h3>
+              <p>Combining wind models, chemical networks and radiative transfer to follow how molecules and dust form and evolve in the outflows of AGB stars, and to predict observables that can be compared directly with telescope data.</p>
+            </div>
+          </article>
+
+          <article class="project">
+            <!-- TODO: replace with e.g. <img src="images/rsg-hrd.png" alt="HR diagram of MESA tracks with enhanced RSG mass loss"> -->
+            <div class="figure-placeholder" role="img" aria-label="Figure placeholder">
+              <span>Figure placeholder</span>
+              <small>e.g. HR diagram of MESA tracks with different red supergiant mass-loss rates</small>
+            </div>
+            <div class="project-body">
+              <p class="meta">BSc thesis · Universitas Hasanuddin</p>
+              <h3>Enhanced mass loss in red supergiants</h3>
+              <p>Using <a href="https://docs.mesastar.org/en/" target="_blank" rel="noopener">MESA</a> to explore how stronger mass loss during the red supergiant phase changes the evolutionary paths and final fates of massive stars.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="section">
+        <h2>Education</h2>
+        <ol class="timeline">
+          <li>
+            <p class="meta"><span class="status">Ongoing</span></p>
+            <h3>MSc Astronomy &amp; Astrophysics</h3>
+            <p>KU Leuven, Belgium</p>
+          </li>
+          <li>
+            <h3>BSc Physics</h3>
+            <p>Universitas Hasanuddin, Indonesia</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="publications" class="section">
+        <h2>Publications &amp; talks</h2>
+        <!-- TODO: list papers, posters and talks here as they come. Example:
+        <ul class="pubs">
+          <li><b>Negara, A. A. P.</b>, et al. (2027). Title. <i>A&amp;A</i>, 600, A1. <a href="...">ADS</a></li>
+        </ul> -->
+        <p class="note">A full list is being put together. In the meantime, see my profiles on
+          <a href="https://scholar.google.com/citations?user=L5KyOsYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> and
+          <a href="https://www.researchgate.net/profile/Andi-Agung-Prawira-Negara/research" target="_blank" rel="noopener">ResearchGate</a>.
+        </p>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>
+            <p class="label">Email</p>
+            <p><a href="mailto:aagungprawira.negara@student.kuleuven.be">aagungprawira.negara@student.kuleuven.be</a></p>
+          </div>
+          <div>
+            <p class="label">Mailing address</p>
+            <address>
+              Institute of Astronomy, Department of Physics and Astronomy<br />
+              Faculty of Science, KU Leuven<br />
+              Celestijnenlaan 200D, 3001 Leuven, Belgium
+            </address>
           </div>
         </div>
-
-        <div class="col-lg-9 col-md-8">
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <!-- <img class="rounded float-left mx-auto d-block" src="static/images/propic.png" alt="profile_picture"> -->
-                  <h5 class="card-title">About</h5>
-                  <!-- <class="card-text: justify-content-around"> -->
-                  <p class="card-text">
-                    Hello! I'm Andi Agung Prawira Negara (Agung Negara), and I'm currently a Master's student in Astronomy and Astrophysics at KU Leuven. My research interests lie broadly in computational astrophysics, particularly stellar evolution, as well as the application of machine learning to astronomical problems. I am also interested in space weather and data-driven approaches to understanding astrophysical phenomena.
-                    <br />
-                    <br />
-                    Before joining KU Leuven, I completed my bachelor's degree in Physics at Universitas Hasanuddin. My undergraduate research explored how enhanced mass-loss rates during the red supergiant phase influence the evolution of massive stars using the one-dimensional stellar evolution code  <a href="https://docs.mesastar.org/en/" target="_blank">MESA</a> . 
-                     <br />
-                    <br />
-                    At KU Leuven, my research focuses on the circumstellar environments of asymptotic giant branch (AGB) stars. My thesis combines computational modelling, astrochemistry, and radiative transfer to investigate the physical and chemical processes in stellar winds and to better connect theoretical models with astronomical observations.
-                    <br />
-                    <!-- <br />
-                    <b>Language:</b> Python, JavaScript, SQL.
-                    <br />
-                    <b>Technologies:</b> MESA (1D Stellar Evolution Code), Linux, React.Js, Node.Js, PostgreSQL, MySQL, Git.
-                    <br />
-                    <b>Libraries:</b> Pandas, Matplotlib, Numpy.
-                    <br /> -->
-                  </p>
-                  <hr class="my-4" />
-                  <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
-                  <a class="btn btn-transparent" href="#" target="_blank"><i class="fab fa-twitter-square fa-lg"></i></a>
-                  <a class="btn btn-transparent" href="https://github.com/aapnegara" target="_blank"><i class="fab fa-github-square fa-lg"></i></a>
-                  <!-- <a class="btn btn-transparent" href="#" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a> -->
-                  <!-- <a class="btn btn-transparent" href="#" target="_blank"><i class="fab fa-instagram fa-lg"></i></a> -->
-                  <a class="btn btn-transparent" href="https://www.linkedin.com/in/andiagungprawiranegara/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                  <a class="btn btn-transparent" href="https://www.researchgate.net/profile/Andi-Agung-Prawira-Negara/research" target="_blank"><i class="fab fa-researchgate fa-lg"></i></a>
-                  <a class="btn btn-transparent" href="https://scholar.google.com/citations?user=L5KyOsYAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap fa-lg"></i></a>
-                  <!-- </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-12">
-                  <address>
-                    <strong>Mailing address:</strong><br />
-                    Physics and Astronomy Department<br />
-                    Faculty of Science, KU Leuven<br />
-                    Celestijnenlaan 200, Leuven, Belgium<br />
-                    email: aagungprawira.negara@student.kuleuven.be
-                  </address>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <footer class="footer">
-      <div class="container">
-        <p class="text-muted"><a href="http://aapnegara.github.io">@aapnegara</a> &mdash; 2022 | built with <a href="http://getbootstrap.com/" target="_blank">bootstrap</a></p>
+      <div class="wrap">
+        <p>© 2026 Andi Agung Prawira Negara · Last updated November 2026</p>
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.querySelector(".theme-toggle");
+        function current() {
+          var t = root.getAttribute("data-theme");
+          if (t) return t;
+          return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        btn.addEventListener("click", function () {
+          var next = current() === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+        });
+        document.querySelectorAll('a[aria-disabled="true"]').forEach(function (a) {
+          a.addEventListener("click", function (e) { e.preventDefault(); });
+        });
+      })();
+    </script>
   </body>
 </html>
