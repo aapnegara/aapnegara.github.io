@@ -822,3 +822,8 @@ img.drawer-figure {
 .project-body p:last-of-type {
   margin-bottom: 16px;
 }
+
+.drawer:focus,
+.drawer:focus-visible {
+  outline: none;
+}
