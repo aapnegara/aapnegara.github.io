@@ -659,3 +659,166 @@ a:hover {
   margin: 0 !important;
   font-size: 0.72rem !important;
 }
+
+/* ---------- Project "Read more" button + slide-over panel ---------- */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 18px;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, gap 0.15s ease;
+}
+.read-more:hover {
+  border-color: var(--accent);
+  gap: 10px;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(640px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+.drawer[open] {
+  display: flex;
+  flex-direction: column;
+  animation: drawer-in 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.drawer::backdrop {
+  background: rgba(8, 10, 20, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: fade-in 0.25s ease;
+}
+@keyframes drawer-in {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+.drawer-bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px 14px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.drawer-bar .meta {
+  margin: 0;
+}
+.drawer-close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+.drawer-close svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 28px 48px;
+}
+.drawer-body h2 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+.drawer-body h3 {
+  font-size: 1.1rem;
+  margin: 28px 0 8px;
+}
+.drawer-body p {
+  color: var(--muted);
+}
+.drawer-figure {
+  width: 100%;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+img.drawer-figure {
+  display: block;
+  height: auto;
+  border-style: solid;
+}
+.draft {
+  border-left: 3px solid var(--accent-soft);
+  padding-left: 12px;
+}
+
+@media (max-width: 760px) {
+  .drawer {
+    border-left: 0;
+  }
+  .drawer-bar {
+    padding: 12px 16px;
+  }
+  .drawer-body {
+    padding: 22px 16px 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer[open],
+  .drawer::backdrop {
+    animation: none;
+  }
+}
+
+/* Keep "Read more" buttons aligned at the bottom of each card */
+.project {
+  display: flex;
+  flex-direction: column;
+}
+.project-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.project-body .read-more {
+  margin-top: auto;
+  align-self: flex-start;
+}
+.project-body p:last-of-type {
+  margin-bottom: 16px;
+}

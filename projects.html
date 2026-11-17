@@ -65,6 +65,7 @@
               <p class="meta">MSc thesis · KU Leuven · <span class="status">Ongoing</span></p>
               <h3>Circumstellar environments of AGB stars</h3>
               <p>Combining wind models, chemical networks and radiative transfer to follow how molecules and dust form and evolve in the outflows of AGB stars, and to predict observables that can be compared directly with telescope data.</p>
+              <button class="read-more" type="button" data-open="agb-thesis" aria-haspopup="dialog">Read more <span aria-hidden="true">→</span></button>
             </div>
           </article>
 
@@ -78,15 +79,89 @@
               <p class="meta">BSc thesis · Universitas Hasanuddin</p>
               <h3>Enhanced mass loss in red supergiants</h3>
               <p>Using <a href="https://docs.mesastar.org/en/" target="_blank" rel="noopener">MESA</a> to explore how stronger mass loss during the red supergiant phase changes the evolutionary paths and final fates of massive stars.</p>
+              <button class="read-more" type="button" data-open="rsg-mass-loss" aria-haspopup="dialog">Read more <span aria-hidden="true">→</span></button>
             </div>
           </article>
         </div>
       </section>
     </main>
 
+    <!-- ============================================================
+         PROJECT DETAIL PANELS
+         Each <dialog> slides in when its "Read more" button is clicked.
+         The id must match the button's data-open="..." value.
+         Link straight to one with projects.html#its-id
+         Everything marked [draft] is placeholder text: rewrite it in your own words.
+    ============================================================= -->
+
+    <dialog class="drawer" id="agb-thesis" aria-labelledby="agb-thesis-title">
+      <div class="drawer-bar">
+        <p class="meta">MSc thesis · KU Leuven · <span class="status">Ongoing</span></p>
+        <button class="drawer-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+      </div>
+      <div class="drawer-body">
+        <h2 id="agb-thesis-title">Circumstellar environments of AGB stars</h2>
+        <!-- TODO: replace with <img class="drawer-figure" src="images/agb-thesis.png" alt="..."> -->
+        <div class="figure-placeholder drawer-figure" role="img" aria-label="Figure placeholder">
+          <span>Figure placeholder</span>
+          <small>A key figure from the thesis, with a one-line caption below it</small>
+        </div>
+
+        <h3>Why it matters</h3>
+        <p class="draft">[draft] Stars of low and intermediate mass end their lives on the asymptotic giant branch, where slow, dense winds return processed material to the interstellar medium. These outflows are rich chemical laboratories in which molecules and dust grains form, so understanding them links stellar evolution to the chemical enrichment of galaxies.</p>
+
+        <h3>What I do</h3>
+        <p class="draft">[draft] Describe your approach here: which wind/envelope model you use, which chemical network, how radiative transfer is included, and which observables (e.g. molecular line profiles, maps) you predict and compare with data.</p>
+
+        <h3>Tools</h3>
+        <ul class="tags">
+          <li>Python</li>
+          <li>Chemical kinetics</li>
+          <li>Radiative transfer</li>
+          <!-- TODO: add the specific codes you use -->
+        </ul>
+
+        <h3>Status &amp; outputs</h3>
+        <p class="draft">[draft] Ongoing. Add milestones, posters, or a link to the thesis once it is public.</p>
+        <!-- e.g. <p><a class="pill" href="files/thesis.pdf">Thesis (PDF)</a></p> -->
+      </div>
+    </dialog>
+
+    <dialog class="drawer" id="rsg-mass-loss" aria-labelledby="rsg-mass-loss-title">
+      <div class="drawer-bar">
+        <p class="meta">BSc thesis · Universitas Hasanuddin</p>
+        <button class="drawer-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+      </div>
+      <div class="drawer-body">
+        <h2 id="rsg-mass-loss-title">Enhanced mass loss in red supergiants</h2>
+        <!-- TODO: replace with <img class="drawer-figure" src="images/rsg-hrd.png" alt="..."> -->
+        <div class="figure-placeholder drawer-figure" role="img" aria-label="Figure placeholder">
+          <span>Figure placeholder</span>
+          <small>e.g. HR diagram of MESA tracks for different mass-loss enhancement factors</small>
+        </div>
+
+        <h3>Why it matters</h3>
+        <p class="draft">[draft] How much mass a massive star loses as a red supergiant is still uncertain, yet it decides how the star ends its life: what kind of supernova it produces, and what remnant is left behind. Varying the mass-loss rate in models shows how sensitive these outcomes are.</p>
+
+        <h3>What I did</h3>
+        <p class="draft">[draft] Describe the setup: the initial masses and metallicity of your models, which mass-loss prescription you used for the red supergiant phase and by how much you enhanced it, and how far you evolved the models.</p>
+
+        <h3>Key findings</h3>
+        <p class="draft">[draft] Summarise 2–3 main results, e.g. how the stars' final masses, positions on the HR diagram, or expected supernova types changed.</p>
+
+        <h3>Tools</h3>
+        <ul class="tags">
+          <li>MESA</li>
+          <li>Python</li>
+          <li>Stellar evolution</li>
+        </ul>
+        <!-- e.g. <p><a class="pill" href="files/bsc-thesis.pdf">Thesis (PDF)</a></p> -->
+      </div>
+    </dialog>
+
     <footer class="footer">
       <div class="wrap">
-        <p>© 2026 Andi Agung Prawira Negara · Last updated November 2026</p>
+        <p>© 2022–2026 Andi Agung Prawira Negara · Last updated November 2026</p>
       </div>
     </footer>
 
