@@ -637,3 +637,25 @@ a:hover {
     transition: none !important;
   }
 }
+
+/* Home footer: compact contact strip */
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.footer-contact p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+.footer-contact .label {
+  margin: 0 !important;
+  font-size: 0.72rem !important;
+}
