@@ -1,17 +1,17 @@
 /* ------------------------------------------------------------------
    Agung Negara — personal page
    Colour tokens: light by default, dark via system setting or toggle.
-   Accent is a warm orange, a nod to the cool, red AGB stars.
+   Accent is cerulean, the colour of hot young stars in a blue image.
 ------------------------------------------------------------------- */
 :root {
-  --bg: #faf8f5;
+  --bg: #f7f9fc;
   --surface: #ffffff;
   --text: #1c1f26;
-  --muted: #5d6270;
-  --border: #e6e2db;
-  --accent: #b9531c;
-  --accent-soft: #fbeee5;
-  --hero-a: rgba(240, 138, 75, 0.16);
+  --muted: #5a6273;
+  --border: #e3e8f0;
+  --accent: #0b78b8;
+  --accent-soft: #e2f2fa;
+  --hero-a: rgba(30, 170, 230, 0.15);
   --hero-b: rgba(76, 96, 196, 0.1);
   --star: rgba(28, 31, 38, 0.18);
   --shadow: 0 1px 2px rgba(20, 20, 30, 0.04), 0 8px 24px rgba(20, 20, 30, 0.06);
@@ -25,9 +25,9 @@
     --text: #e7e9f0;
     --muted: #9aa2b8;
     --border: #232c46;
-    --accent: #f59a62;
-    --accent-soft: rgba(245, 154, 98, 0.12);
-    --hero-a: rgba(245, 154, 98, 0.16);
+    --accent: #6cd0ff;
+    --accent-soft: rgba(108, 208, 255, 0.12);
+    --hero-a: rgba(108, 208, 255, 0.15);
     --hero-b: rgba(96, 120, 255, 0.16);
     --star: rgba(255, 255, 255, 0.55);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -41,9 +41,9 @@
   --text: #e7e9f0;
   --muted: #9aa2b8;
   --border: #232c46;
-  --accent: #f59a62;
-  --accent-soft: rgba(245, 154, 98, 0.12);
-  --hero-a: rgba(245, 154, 98, 0.16);
+  --accent: #6cd0ff;
+  --accent-soft: rgba(108, 208, 255, 0.12);
+  --hero-a: rgba(108, 208, 255, 0.15);
   --hero-b: rgba(96, 120, 255, 0.16);
   --star: rgba(255, 255, 255, 0.55);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -316,11 +316,11 @@ a:hover {
   color: #fff;
 }
 :root[data-theme="dark"] .pill-primary {
-  color: #1a0f08;
+  color: #04121c;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .pill-primary {
-    color: #1a0f08;
+    color: #04121c;
   }
 }
 .pill.placeholder {
