@@ -827,3 +827,24 @@ img.drawer-figure {
 .drawer:focus-visible {
   outline: none;
 }
+
+/* ---------- Stellar wind background (wind.js) ---------- */
+.wind-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero,
+.page-head,
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+/* Footer sits on solid ground: the wind only shows between menu and footer */
+.footer {
+  background: var(--bg);
+}
