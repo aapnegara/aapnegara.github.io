@@ -847,3 +847,67 @@ main,
 .footer {
   background: var(--bg);
 }
+
+/* ---------- Publication / talk entries ---------- */
+.pubs li.entry {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 4px 18px;
+  align-items: start;
+}
+.pubs li.entry.placeholder {
+  border-style: dashed;
+  background: transparent;
+  opacity: 0.7;
+}
+.entry .year {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-top: 1px;
+}
+.entry p {
+  margin: 0 0 2px;
+}
+.entry .title {
+  font-weight: 600;
+  color: var(--text);
+}
+.entry .title a {
+  color: var(--text);
+  text-decoration-color: var(--border);
+}
+.entry .title a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+.entry .tr {
+  color: var(--muted);
+  font-style: italic;
+}
+.entry .authors,
+.entry .venue {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.entry .authors b {
+  color: var(--text);
+}
+.badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 600;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .pubs li.entry {
+    grid-template-columns: 1fr;
+  }
+}
