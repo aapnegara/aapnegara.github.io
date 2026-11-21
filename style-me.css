@@ -378,7 +378,6 @@ a:hover {
     radial-gradient(1px 1px at 88% 62%, var(--star) 50%, transparent 51%),
     radial-gradient(1px 1px at 94% 12%, var(--star) 50%, transparent 51%),
     radial-gradient(1px 1px at 6% 86%, var(--star) 50%, transparent 51%),
-    radial-gradient(600px 320px at 85% 10%, var(--hero-a), transparent 70%),
     radial-gradient(520px 300px at 10% 100%, var(--hero-b), transparent 70%);
 }
 

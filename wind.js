@@ -16,6 +16,9 @@
   var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
   // ---- Tunable parameters -------------------------------------------------
+  // Where the star sits, as fractions of the window (x from left, y from top).
+  var STAR_DESKTOP = [0.81, 0.4];  // middle of the empty space right of the name
+  var STAR_MOBILE  = [0.76, 0.21];  // right of the round portrait
   var R_STAR = 26;          // stellar radius in px (particles are launched just outside it)
   var BETA = 1.0;           // beta-law exponent (~0.5–1 for hot stars, ~1+ for cool winds)
   var V_INF = 0.045;        // terminal speed, px per ms (≈45 px/s: calm)
@@ -56,8 +59,9 @@
     canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     var mobile = W < 760;
-    sx = W * (mobile ? 0.92 : 0.86);
-    sy = H * (mobile ? 0.06 : 0.1);
+    var pos = mobile ? STAR_MOBILE : STAR_DESKTOP;
+    sx = W * pos[0];
+    sy = H * pos[1];
     maxR = Math.hypot(Math.max(sx, W - sx), Math.max(sy, H - sy)) + 40;
     target = Math.round(Math.min(420, (W * H) / 2400));   // average particles in flight   // steady-wind particle budget
   }
@@ -84,8 +88,9 @@
   }
 
   function gust() {
-    // Aim into the visible page: from the top-right star toward lower-left.
-    var centre = Math.PI * (0.4 + Math.random() * 0.42);   // ~70°–145°: down and down-left (canvas y points down)
+    // Any direction except toward the text on the left: from ~70° up-right, round through
+    // right and down, to ~120° down-left (canvas angles; y points down).
+    var centre = Math.PI * (-0.4 + Math.random() * 1.07);
     var width = Math.PI * (0.18 + Math.random() * 0.1);     // ~30°–50° wide cone
     var vinf = V_INF * GUST_SPEEDUP;
     for (var i = 0; i < GUST_PARTICLES; i++) {
