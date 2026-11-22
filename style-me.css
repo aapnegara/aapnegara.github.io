@@ -827,8 +827,8 @@ img.drawer-figure {
   outline: none;
 }
 
-/* ---------- Stellar wind background (wind.js) ---------- */
-.wind-canvas {
+/* ---------- Solar corona background (corona.js) ---------- */
+.corona-canvas {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -843,7 +843,7 @@ main,
   position: relative;
   z-index: 1;
 }
-/* Footer sits on solid ground: the wind only shows between menu and footer */
+/* Footer sits on solid ground: the effect only shows between menu and footer */
 .footer {
   background: var(--bg);
 }
