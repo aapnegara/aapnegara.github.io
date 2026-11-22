@@ -47,10 +47,10 @@
     // Full effect on Home; dimmer behind the reading pages so body text stays calm.
     if (!document.body.classList.contains("home")) k *= 0.55;
     theme = dark ? {
-      rgb: "125, 215, 255", loop: 0.42 * k, blob: 0.8 * k, flash: 0.6 * k,
+      rgb: "125, 215, 255", loop: 0.42 * k, blob: 0.8 * k, flash: 1.0 * k,
       disk0: 0.02 * k, disk1: 0.08 * k, corona: 0.12 * k, blend: "lighter"
     } : {
-      rgb: hexToRgb(accent), loop: 0.3 * k, blob: 0.55 * k, flash: 0.4 * k,
+      rgb: hexToRgb(accent), loop: 0.3 * k, blob: 0.55 * k, flash: 0.7 * k,
       disk0: 0.015 * k, disk1: 0.06 * k, corona: 0.09 * k, blend: "source-over"
     };
   }
@@ -157,14 +157,17 @@
     shape(L);
     var p3 = bez(L, 0.3), p7 = bez(L, 0.7), top = bez(L, 0.5);
     var X = [(p3[0] + p7[0]) / 2, (p3[1] + p7[1]) / 2];
-    flashes.push({ x: X[0], y: X[1], age: 0, dur: 750, r: 26 + L.H0 * 0.15 });
+    var sparks = [];
+    for (var k = 0; k < 18; k++) sparks.push({ a: rand(0, Math.PI * 2), v: rand(0.05, 0.16) });
+    flashes.push({ x: X[0], y: X[1], nx: L.nx, ny: L.ny, age: 0, dur: 1400, r: 18 + L.H0 * 0.12, sparks: sparks });
+    L.bright = 1.6;
     plasmoids.push({
       x: (X[0] + top[0]) / 2, y: (X[1] + top[1]) / 2,
       nx: L.nx, ny: L.ny, rot: L.am + Math.PI / 2,
       r: Math.max(8, Math.hypot(top[0] - X[0], top[1] - X[1]) * 0.45),
       age: 0, dur: 4200, v: 0.06
     });
-    L.state = "snap"; L.t = 0; L.bright = 1;
+    L.state = "snap"; L.t = 0;
   }
 
   // ---------- drawing ----------
@@ -219,13 +222,52 @@
       var f = flashes[i];
       f.age += dt;
       if (f.age > f.dur) { flashes.splice(i, 1); continue; }
-      var p = f.age / f.dur, a = theme.flash * Math.pow(1 - p, 2), r = f.r * (1 + 1.5 * p);
-      var g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, r);
-      g.addColorStop(0, rgba("235, 250, 255", a));
-      g.addColorStop(0.25, rgba(theme.rgb, a * 0.7));
+      var p = f.age / f.dur;
+      var rise = Math.min(1, f.age / 90);                      // near-instant onset
+      var a = theme.flash * rise * Math.pow(1 - p, 1.6);
+
+      // 1. wide, soft glow that briefly lights up the surroundings
+      var R = f.r * (4 + 3 * p);
+      var g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, R);
+      g.addColorStop(0, rgba(theme.rgb, a * 0.45));
       g.addColorStop(1, rgba(theme.rgb, 0));
       ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(f.x, f.y, R, 0, Math.PI * 2); ctx.fill();
+
+      // 2. white-hot core
+      var r = f.r * (0.8 + 1.2 * p);
+      var c2 = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, r);
+      c2.addColorStop(0, rgba("255, 255, 255", Math.min(1, a * 1.6)));
+      c2.addColorStop(0.3, rgba("210, 245, 255", a));
+      c2.addColorStop(1, rgba(theme.rgb, 0));
+      ctx.fillStyle = c2;
       ctx.beginPath(); ctx.arc(f.x, f.y, r, 0, Math.PI * 2); ctx.fill();
+
+      // 3. outflow jets along the current sheet (reconnection outflows, up and down)
+      var jl = f.r * (1.5 + 5 * Math.sqrt(p));
+      ctx.lineCap = "round";
+      for (var s = -1; s <= 1; s += 2) {
+        var jx = f.x + f.nx * jl * s, jy = f.y + f.ny * jl * s;
+        var jg = ctx.createLinearGradient(f.x, f.y, jx, jy);
+        jg.addColorStop(0, rgba("235, 250, 255", a));
+        jg.addColorStop(1, rgba(theme.rgb, 0));
+        ctx.strokeStyle = jg; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(f.x, f.y); ctx.lineTo(jx, jy); ctx.stroke();
+      }
+
+      // 4. expanding shock ring
+      var ring = f.r * (1 + 6 * p);
+      ctx.strokeStyle = rgba(theme.rgb, a * 0.9 * (1 - p));
+      ctx.lineWidth = 2.2 * (1 - p) + 0.4;
+      ctx.beginPath(); ctx.arc(f.x, f.y, ring, 0, Math.PI * 2); ctx.stroke();
+
+      // 5. sparks (accelerated particles) flying out
+      for (var k = 0; k < f.sparks.length; k++) {
+        var sp = f.sparks[k], d = sp.v * f.age;
+        var sx = f.x + Math.cos(sp.a) * d, sy = f.y + Math.sin(sp.a) * d;
+        ctx.beginPath(); ctx.arc(sx, sy, 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = rgba("230, 250, 255", a * (1 - p)); ctx.fill();
+      }
     }
   }
 

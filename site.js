@@ -12,6 +12,8 @@
       var next = current() === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
+      // Backup for browsers/frames that block storage: window.name survives page navigation.
+      try { window.name = (window.name || "").replace(/(^|;)theme=(light|dark)/, "") + ";theme=" + next; } catch (e) {}
     });
   }
   // Placeholder links (dashed buttons) do nothing until filled in.
