@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects · Agung Negara</title>
+    <meta name="description" content="Research projects of Andi Agung Prawira Negara: AGB circumstellar envelopes (MSc, KU Leuven) and red supergiant mass loss with MESA (BSc)." />
+    <meta name="author" content="Andi Agung Prawira Negara" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects · Agung Negara" />
+    <meta property="og:description" content="Research projects of Andi Agung Prawira Negara: AGB circumstellar envelopes (MSc, KU Leuven) and red supergiant mass loss with MESA (BSc)." />
+    <meta property="og:image" content="https://aapnegara.github.io/images/profile.jpg" />
+    <meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230b1020'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%231ea7e8'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%231ea7e8' stroke-opacity='.35' stroke-width='2'/%3E%3C/svg%3E" />
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (!t) { var m = /(?:^|;)theme=(light|dark)/.exec(window.name || ""); if (m) t = m[1]; }
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap" rel="stylesheet" />
+    <link href="style-me.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <nav class="nav" aria-label="Main">
+      <div class="wrap nav-inner">
+        <a class="brand" href="index.html">Agung Negara</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <header class="page-head sky">
+      <div class="wrap">
+        <h1>Projects</h1>
+        <p class="lede">Research I am working on now, and what came before. Each project pairs models with the observations they should explain.</p>
+      </div>
+    </header>
+
+    <main class="wrap" id="main">
+      <section class="section">
+        <!-- To add a project: copy one <article class="project"> block below. -->
+        <div class="projects">
+          <article class="project">
+            <!-- TODO: replace this placeholder with <img src="images/agb-thesis.png" alt="..."> -->
+            <div class="figure-placeholder" role="img" aria-label="Figure placeholder">
+              <span>Figure placeholder</span>
+              <small>e.g. a model of the circumstellar envelope, or synthetic vs. observed line profiles</small>
+            </div>
+            <div class="project-body">
+              <p class="meta">MSc thesis · KU Leuven · <span class="status">Ongoing</span></p>
+              <h3>Circumstellar environments of AGB stars</h3>
+              <p>Combining wind models, chemical networks and radiative transfer to follow how molecules and dust form and evolve in the outflows of AGB stars, and to predict observables that can be compared directly with telescope data.</p>
+              <button class="read-more" type="button" data-open="agb-thesis" aria-haspopup="dialog">Read more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="project">
+            <!-- TODO: replace with e.g. <img src="images/rsg-hrd.png" alt="HR diagram of MESA tracks with enhanced RSG mass loss"> -->
+            <div class="figure-placeholder" role="img" aria-label="Figure placeholder">
+              <span>Figure placeholder</span>
+              <small>e.g. HR diagram of MESA tracks with different red supergiant mass-loss rates</small>
+            </div>
+            <div class="project-body">
+              <p class="meta">BSc thesis · Universitas Hasanuddin</p>
+              <h3>Enhanced mass loss in red supergiants</h3>
+              <p>Using <a href="https://docs.mesastar.org/en/" target="_blank" rel="noopener">MESA</a> to explore how stronger mass loss during the red supergiant phase changes the evolutionary paths and final fates of massive stars.</p>
+              <button class="read-more" type="button" data-open="rsg-mass-loss" aria-haspopup="dialog">Read more <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         PROJECT DETAIL PANELS
+         Each <dialog> slides in when its "Read more" button is clicked.
+         The id must match the button's data-open="..." value.
+         Link straight to one with projects.html#its-id
+         Everything marked [draft] is placeholder text: rewrite it in your own words.
+    ============================================================= -->
+
+    <dialog class="drawer" id="agb-thesis" aria-labelledby="agb-thesis-title">
+      <div class="drawer-bar">
+        <p class="meta">MSc thesis · KU Leuven · <span class="status">Ongoing</span></p>
+        <button class="drawer-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+      </div>
+      <div class="drawer-body">
+        <h2 id="agb-thesis-title">Circumstellar environments of AGB stars</h2>
+        <!-- TODO: replace with <img class="drawer-figure" src="images/agb-thesis.png" alt="..."> -->
+        <div class="figure-placeholder drawer-figure" role="img" aria-label="Figure placeholder">
+          <span>Figure placeholder</span>
+          <small>A key figure from the thesis, with a one-line caption below it</small>
+        </div>
+
+        <h3>Why it matters</h3>
+        <p class="draft">[draft] Stars of low and intermediate mass end their lives on the asymptotic giant branch, where slow, dense winds return processed material to the interstellar medium. These outflows are rich chemical laboratories in which molecules and dust grains form, so understanding them links stellar evolution to the chemical enrichment of galaxies.</p>
+
+        <h3>What I do</h3>
+        <p class="draft">[draft] Describe your approach here: which wind/envelope model you use, which chemical network, how radiative transfer is included, and which observables (e.g. molecular line profiles, maps) you predict and compare with data.</p>
+
+        <h3>Tools</h3>
+        <ul class="tags">
+          <li>Python</li>
+          <li>Chemical kinetics</li>
+          <li>Radiative transfer</li>
+          <!-- TODO: add the specific codes you use -->
+        </ul>
+
+        <h3>Status &amp; outputs</h3>
+        <p class="draft">[draft] Ongoing. Add milestones, posters, or a link to the thesis once it is public.</p>
+        <h3>Downloads &amp; links</h3>
+        <!-- TODO: to activate a button, set its href and remove class "placeholder" + aria-disabled="true".
+             PDF: put the file in a "files" folder, e.g. href="files/msc-thesis.pdf" (add the download attribute to force a download).
+             ResearchGate: paste the link to this specific thesis/publication. -->
+        <ul class="links">
+          <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">↓ MSc thesis (PDF)</a></li>
+          <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">View on ResearchGate</a></li>
+        </ul>
+      </div>
+    </dialog>
+
+    <dialog class="drawer" id="rsg-mass-loss" aria-labelledby="rsg-mass-loss-title">
+      <div class="drawer-bar">
+        <p class="meta">BSc thesis · Universitas Hasanuddin</p>
+        <button class="drawer-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+      </div>
+      <div class="drawer-body">
+        <h2 id="rsg-mass-loss-title">Enhanced mass loss in red supergiants</h2>
+        <!-- TODO: replace with <img class="drawer-figure" src="images/rsg-hrd.png" alt="..."> -->
+        <div class="figure-placeholder drawer-figure" role="img" aria-label="Figure placeholder">
+          <span>Figure placeholder</span>
+          <small>e.g. HR diagram of MESA tracks for different mass-loss enhancement factors</small>
+        </div>
+
+        <h3>Why it matters</h3>
+        <p class="draft">[draft] How much mass a massive star loses as a red supergiant is still uncertain, yet it decides how the star ends its life: what kind of supernova it produces, and what remnant is left behind. Varying the mass-loss rate in models shows how sensitive these outcomes are.</p>
+
+        <h3>What I did</h3>
+        <p class="draft">[draft] Describe the setup: the initial masses and metallicity of your models, which mass-loss prescription you used for the red supergiant phase and by how much you enhanced it, and how far you evolved the models.</p>
+
+        <h3>Key findings</h3>
+        <p class="draft">[draft] Summarise 2–3 main results, e.g. how the stars' final masses, positions on the HR diagram, or expected supernova types changed.</p>
+
+        <h3>Tools</h3>
+        <ul class="tags">
+          <li>MESA</li>
+          <li>Python</li>
+          <li>Stellar evolution</li>
+        </ul>
+        <h3>Downloads &amp; links</h3>
+        <!-- TODO: to activate a button, set its href and remove class "placeholder" + aria-disabled="true".
+             PDF: put the file in a "files" folder, e.g. href="files/bsc-thesis.pdf" (add the download attribute to force a download).
+             ResearchGate: paste the link to this specific thesis/publication. -->
+        <ul class="links">
+          <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">↓ BSc thesis (PDF)</a></li>
+          <li><a class="pill placeholder" href="#" aria-disabled="true" title="Coming soon">View on ResearchGate</a></li>
+        </ul>
+      </div>
+    </dialog>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>© 2022 Andi Agung Prawira Negara</p>
+      </div>
+    </footer>
+
+    <script src="corona.js"></script>
+    <script src="site.js"></script>
+  </body>
+</html>
